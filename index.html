@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Are Semicolons Necessary In Javascript?</title>
+    <style type="text/css">
+      body{font-family:Arial;font-size:20px;margin:auto;width:700px;}
+      .pt50{padding-top:50px;}
+      .center{text-align:center;}
+      .huge{font-size:8em;}
+      .small{font-size:0.5em;}
+      blockquote{background-color:#EEE;}
+      li{padding-bottom:20px;}
+      hr{margin:40px 0;}
+    </style>
+  </head>
+
+<body>
+
+<h1 class="center pt50 huge">NO</h1>
+
+<ul>
+<li><a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">An Open Letter to JavaScript Leaders Regarding Semicolons</a>
+<li><a href="http://inimino.org/~inimino/blog/javascript_semicolons">JavaScript Semicolon Insertion: Everything you need to know</a>
+<li><a href="http://mislav.uniqpath.com/2010/05/semicolons/">Semicolons in JavaScript are optional</a>
+<li><a href="http://bclary.com/2004/11/07/#a-7.9">ECMAScript Language Specification: 7.9.1 Rules of Automatic Semicolon Insertion</a>
+</ul>
+
+<hr/>
+
+<blockquote>
+  <p>Yes, it's quite safe, and perfectly valid JS that every browser understands. Closure compiler, yuicompressor, packer, and jsmin all can properly minify it. There is no performance impact anywhere.</p>
+  <p>I am sorry that, instead of educating you, the leaders in this language community have given you lies and fear.  That was shameful. I recommend learning how statements in JS are actually terminated (and in which cases they are not terminated), so that you can write code that you find beautiful.</p>
+  <p>...</p>
+  <p>the typical place where "automatic semicolon insertion" bites unexpectedly is with the restricted productions. Adding semicolons to every line will not make return\nfoo return anything other than undefined. The problem is that you do use line breaks, not that you don't use semicolons.</p>
+
+  <p>The only way to prevent restricted productions from ever being an issue is to always use semicolons and never use linebreaks.</p>
+  <p>...</p>
+  <p>If you have been writing JavaScript for a while, and you provide guidance or leadership to another person who has been writing JavaScript for less time than you, then I'm talking to you. Being a leader is a responsibility. Take it seriously. Don't spread lies. ... Just say true things, instead of being a liar, that's all that this is about.</p>
+</blockquote>
+<i> - <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">An Open Letter to JavaScript Leaders Regarding Semicolons</a></i>
+
+<hr/>
+
+<blockquote>
+<p>As for JavaScript implementations where interpretation of these rules differs, well, I've yet to find one. When I ask developers about this, or find archived discussions, typically they are yeah, there's this browser where this is utterly broken, I simply forgot which. Of course, they never remember.</p>
+<p>...</p>
+<p>Suppose I have code that works in every JavaScript implementation that I target (major browsers and some server-side implementations). If I run it through your minification tool and that tools breaks my code, then I'm sad to report that your tool is broken. If this tool edits JavaScript code, it'd better understand it as a real interpreter would.</p>
+
+<p>While on the topic of minification, let's do a reality check. I took the jQuery source and removed all semicolons, then ran it through Google Closure Compiler. Resulting size was 76,673 bytes. The size of original "jquery.min.js" was 76,674 (1 byte more). So you see, there was almost no change; and of course, its test suite passed as before.</p>
+<p>...</p>
+<p>You might notice that in this article I'm not telling you should be semicolon-free. I'm just laying out concrete evidence that you can be. The choice should always be yours.</p>
+</blockquote>
+<i> - <a href="http://mislav.uniqpath.com/2010/05/semicolons/">Semicolons in JavaScript are optional</a></i>
+
+<hr/>
+
+<blockquote>
+<p>Another misconception is that bugs in browser JavaScript engines mean that using semicolons everywhere is safer, and will protect the developer from compatibility issues between browsers. This is simply not the case. All extant browsers implement the specification correctly with regard to ASI, and any bugs that may have existed are long since lost in the mists of early Web history. There is no reason to be concerned about browser compatibility in regard to semicolon insertion: all browsers implement the same rules and they are the rules given by the spec and explained above.</p>
+
+<p>Should you omit optional semicolons or not? The answer is a matter of personal preference, but should be made on the basis of informed choice rather than nebulous fears of unknown syntactical traps or nonexistent browser bugs. If you remember the rules given here, you are equipped to make your own choices, and to read any JavaScript easily.</p>
+</blockquote>
+<i> - <a href="http://inimino.org/~inimino/blog/javascript_semicolons">JavaScript Semicolon Insertion: Everything you need to know</a></i>
+
+<hr/>
+
+<h3>Examples of cringe-inducing wrongness on the internet:</h3>
+
+<ul>
+<li><a href="http://news.ycombinator.com/item?id=374529">Ask HN: Why use semicolons to terminate statements in modern JavaScript or ActionScript?</a>
+<li><a href="http://stackoverflow.com/questions/537632/should-i-use-semi-colons-in-javascript">Stack Overflow: Should I use semi-colons in javascript?</a>
+<li><a href="http://stackoverflow.com/questions/2399935/why-use-semicolon">Stack Overflow: Why use semicolon?</a>
+<li><a href="Do you recommend using semicolons after every statement in JavaScript?">Stack Overflow: Do you recommend using semicolons after every statement in JavaScript?</a>
+</ul>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21209820-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
