@@ -74,6 +74,17 @@
 </body>
 </html>
 
+<hr/>
+
+<a name="editorsnote"/>
+<h3>Editor's note</h3>
+
+<p>Here's a mostly-well-reasoned post that's popped up in response to this site <a href="http://lucumr.pocoo.org/2011/2/6/automatic-semicolon-insertion/">Dealing with JavaScript's Automatic Semicolon Insertion</a> (though some of the conclusions are sadly citation-free and skate close to superstition).  Speaking for the semicolon-less community, I readily concede that there are a couple of corner cases one must be conscious of. In fact you'll find one of the more famous corner cases - line beginning with paren - in the Google Analytics code in this page.  These corner cases do not/ought not produce subtle errors - your code simply won't work, and your <a href="https://github.com/jquery/qunit">unit</a> <a href="https://github.com/pivotal/jasmine">tests</a> will fail.
+  
+<p>The goal of this effort is minimalist: to push back against the sort of outright dogma-driven disinformation and FUD present in the links above.</p>
+
+<p>Beyond that, there's a slipperly slope/consistency argument that I find unconvincing.  It's not the case that because you are forced to use semicolons to chain statements together on a single line in Ruby, that we should therefore end all lines of Ruby with semicolons.  Similarly, in Javascript there's a stable path along a grassy hill here (not a slippery slope).  The authors of the posts cited at the top have decades' worth of combined experience writing and shipping javascript running on high-profile websites+node.js.  It's a fact that the semicolon-less style (semicolon-less except for a few relatively-rare corner cases!) is a non-issue.</p>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || []
