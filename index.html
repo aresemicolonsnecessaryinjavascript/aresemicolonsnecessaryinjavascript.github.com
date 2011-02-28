@@ -10,6 +10,7 @@
       blockquote{background-color:#EEE;}
       li{padding-bottom:20px;}
       hr{margin:40px 0;}
+      .reallyImportant{color:red;}
     </style>
   </head>
 
@@ -22,6 +23,7 @@
 <li><a href="http://inimino.org/~inimino/blog/javascript_semicolons">JavaScript Semicolon Insertion: Everything you need to know</a>
 <li><a href="http://mislav.uniqpath.com/2010/05/semicolons/">Semicolons in JavaScript are optional</a>
 <li><a href="http://bclary.com/2004/11/07/#a-7.9">ECMAScript Language Specification: 7.9.1 Rules of Automatic Semicolon Insertion</a>
+<li><a href="#jshint" class="reallyImportant">*** Important development: JSHint ***</a>
 </ul>
 
 <hr/>
@@ -62,6 +64,13 @@
 
 <hr/>
 
+<blockquote>
+Yes, I'm using automatic semi-colon insertion.
+</blockquote>
+<i> - <a href="http://brendaneich.com/2010/11/paren-free/">Paren-Free (by Brendan Eich, creator of Javascript)</a></i>
+
+<hr/>
+
 <h3>Examples of fear/superstition/wrongness on the internet:</h3>
 
 <ul>
@@ -73,6 +82,33 @@
 
 </body>
 </html>
+
+<hr/>
+
+<a name="jshint"/>
+<h3>Important development: <a href="http://jshint.com/">Anton Kovalyov's JSHint</a></h3>
+
+<blockquote>
+  <blockquote><i>Your sadly pathetic bleatings are harshing my mellow. -<a href="http://tech.groups.yahoo.com/group/jslint_com/message/1688">Douglas Crockford</a>.</i></blockquote>
+  
+  ...
+  
+  JSHint is a fork of JSLint, the tool written and maintained by Douglas Crockford. JSLint served me well for quite some time but in the past few months it has gotten uncomfortably opinionated and hostile towards your code. It is quickly transforming from a tool that helps developers to prevent bugs to a tool that makes sure you write your code like Douglas Crockford.
+</blockquote>
+
+- <a href="http://anton.kovalyov.net/2011/02/20/why-i-forked-jslint-to-jshint/">Why I forked JSLint to JSHint</a>
+
+<p>JSHint is an enlightened code quality tool - it allows for code styles that are in accordance with the spec, not one person's frequently-changing, idiosyncratic idea of what good js code looks like.</p>
+
+<a href="https://github.com/jshint/jshint/blob/master/tests/jshint.js">In particular:</a>
+
+<pre>
+it("must tolerate missing semicolons when asi:true", function () {
+  expect(JSHINT(sc, { asi: true })).toEqual(true);
+});
+</pre>
+
+Thank you Anton, and the JSHint team.
 
 <hr/>
 
