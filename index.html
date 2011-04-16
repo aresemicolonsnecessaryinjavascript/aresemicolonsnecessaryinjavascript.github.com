@@ -100,12 +100,19 @@ Yes, I'm using automatic semi-colon insertion.
 
 <p>JSHint is an enlightened code quality tool - it allows for code styles that are in accordance with the spec, not one person's frequently-changing, idiosyncratic idea of what good js code looks like.</p>
 
-<a href="https://github.com/jshint/jshint/blob/master/tests/jshint.js">In particular:</a>
+<a href="https://github.com/jshint/jshint/blob/master/tests/options.js#L153">In particular:</a>
 
 <pre>
-it("must tolerate missing semicolons when asi:true", function () {
-  expect(JSHINT(sc, { asi: true })).toEqual(true);
-});
+/** Option `asi` allows you to use automatic-semicolon insertion */
+exports.asi = function () {
+    var code = 'hello()';
+
+    assert.ok(!JSHINT(code));
+    assert.eql(JSHINT.errors[0].line, 1);
+    assert.eql(JSHINT.errors[0].reason, 'Missing semicolon.');
+
+    assert.ok(JSHINT(code, { asi: true }));
+};
 </pre>
 
 Thank you Anton, and the JSHint team.
